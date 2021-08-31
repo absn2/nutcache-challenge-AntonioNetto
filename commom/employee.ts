@@ -1,22 +1,24 @@
+export type Gender = "Masculino" | "Feminino" | "Outros"
+
 export class Employee {
 
-  birth_date: Date;
-  cpf: String;
-  email: String;
-  gender: String;
-  name: String;
-  start_date: String;
-  team: String;
+  birth_date!: Date;
+  cpf!: String;
+  email!: String;
+  gender!: Gender;
+  name!: String;
+  start_date!: String;
+  team?: String;
 
   constructor() {
     this.clean();
   }
 
   clean(): void {
-    this.birth_date = null;
+    this.birth_date = new Date();
     this.cpf = "";
     this.email = "";
-    this.gender = "";
+    this.gender = "Outros";
     this.name = "";
     this.start_date = "";
     this.team = "";

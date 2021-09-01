@@ -54,11 +54,11 @@ export default class EmployeesControllers {
 
   public delete(request: Request, response: Response) {
     try {
-      const { cpf } = request.body;
+      const { email } = request.body;
 
       const deleteEmployeeService = new DeleteEmployeeService();
       deleteEmployeeService.execute(
-        cpf,
+        email,
         mockServer);
 
       return response.json({ Success: 'Funcionário Deletado' });

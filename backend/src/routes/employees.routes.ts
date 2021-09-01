@@ -59,7 +59,7 @@ employeesRouter.delete(
   '/',
   celebrate({
     [Segments.BODY]: {
-      cpf: Joi.string().required().regex(new RegExp('[0-9]{3}\.?[0-9]{3}\.?[0-9]{3}\-?[0-9]{2}'))
+      email: Joi.string().email().required()
     },
   }),
   employeesControllers.delete,

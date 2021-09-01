@@ -9,13 +9,13 @@ export class CreateEmployeeService {
     const checkEmployeeExists = employeeRepository.findByCpf(newEmployee.cpf);
 
     if (checkEmployeeExists) {
-      throw new RestfulError("Funcionario já cadastrado", 409);
+      throw new RestfulError("Cpf already in use", 409);
     }
 
     const checkEmployeeEmailExists = employeeRepository.findByEmail(newEmployee.email);
 
     if (checkEmployeeEmailExists) {
-      throw new RestfulError("E-mail já em uso", 409);
+      throw new RestfulError("E-mail already in use", 409);
     }
 
     employeeRepository.createEmployee(newEmployee);

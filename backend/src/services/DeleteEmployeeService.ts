@@ -4,15 +4,15 @@ import MockServer from "../mockServer";
 
 export class DeleteEmployeeService {
 
-  public execute(cpf: string, employeeRepository: MockServer): boolean {
+  public execute(email: string, employeeRepository: MockServer): boolean {
 
-    const checkEmployeeExists = employeeRepository.findByCpf(cpf);
+    const checkEmployeeExists = employeeRepository.findByEmail(email);
 
     if (!checkEmployeeExists) {
-      throw new RestfulError("Funcionario não existe", 404);
+      throw new RestfulError("Employee not found", 404);
     }
 
-    const deleteEmployee = employeeRepository.deleteEmployee(cpf);
+    const deleteEmployee = employeeRepository.deleteEmployee(email);
 
     return deleteEmployee;
   }

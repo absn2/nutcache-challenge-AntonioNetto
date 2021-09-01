@@ -30,8 +30,8 @@ export default class MockServer {
 
   }
 
-  public deleteEmployee(cpf: string) {
-    const index = this.employeeList.findIndex(employee => employee.cpf == cpf);
+  public deleteEmployee(email: string) {
+    const index = this.employeeList.findIndex(employee => employee.email == email);
     this.employeeList.splice(index,1);
 
     return true;

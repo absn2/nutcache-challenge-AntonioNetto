@@ -20,13 +20,13 @@ export class UpdateEmployeeService {
     const checkEmployeeExists = employeeRepository.findByCpf(cpf);
 
     if (!checkEmployeeExists) {
-      throw new RestfulError("Funcionario não existe", 404);
+      throw new RestfulError("Cpf not found", 404);
     }
 
     const checkEmailEmployeeExists = employeeRepository.findByEmail(email);
 
     if (checkEmailEmployeeExists && (cpf != checkEmailEmployeeExists.cpf)) {
-      throw new RestfulError("E-mail já em uso", 409);
+      throw new RestfulError("E-mail already in use", 409);
     }
 
     const employee = { birth_date, cpf, email, gender, name, start_date, team } as Employee;

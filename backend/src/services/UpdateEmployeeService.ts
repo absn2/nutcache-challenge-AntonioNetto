@@ -3,13 +3,13 @@ import RestfulError  from "../../../commom/RestfulError";
 import MockServer from "../mockServer";
 
 interface InterfaceRequest {
-  cpf: String;
-  email: String;
+  cpf: string;
+  email: string;
   birth_date: Date;
   gender: Gender;
-  name: String;
-  start_date: String;
-  team?: String;
+  name: string;
+  start_date: string;
+  team?: string;
 }
 
 export class UpdateEmployeeService {

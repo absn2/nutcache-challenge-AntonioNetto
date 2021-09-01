@@ -12,12 +12,12 @@ type Gender = "Masculino" | "Feminino" | "Outros"
 interface Employee {
 
   birth_date: Date;
-  cpf: String;
-  email: String;
+  cpf: string;
+  email: string;
   gender: Gender;
-  name: String;
-  start_date: String;
-  team?: String;
+  name: string;
+  start_date: string;
+  team?: string;
 
 }
 
@@ -36,6 +36,8 @@ const baseEmployee : Employee = {
   team: ""
 }
 
+const BASE_URL_SERVER = "http://localhost:8000/api/employee"
+
 const EmployeePage = () => {
 
   const [employee, setEmployee] = useState<ActualEmployee>();
@@ -47,8 +49,8 @@ const EmployeePage = () => {
   const [typeForm, setTypeForm] = useState<number>(0);
   const [formData, setFormData] = useState<Employee>(baseEmployee);
 
-  function createData(email: String, name: String, start_date: String, 
-    birth_date: Date, cpf: String, gender: Gender, team?: String) {
+  function createData(email: string, name: string, start_date: string, 
+    birth_date: Date, cpf: string, gender: Gender, team?: string) {
     return { email, name, start_date, team, birth_date, cpf, gender };
   }
 
@@ -57,12 +59,12 @@ const EmployeePage = () => {
   }, [])
 
   const callApi = async(type: number) => {
-    const BASE_URL = process.env.REACT_APP_BASE_URL;
+    const BASE_URL = BASE_URL_SERVER;
 
     if (BASE_URL) {
 
       if (type === 0) {
-
+        
         const employees: Employee[] = (await axios.get(BASE_URL)).data
 
         const employeeRow = employees.map(employee => {

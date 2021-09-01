@@ -3,12 +3,12 @@ export type Gender = "Masculino" | "Feminino" | "Outros"
 export class Employee {
 
   birth_date!: Date;
-  cpf!: String;
-  email!: String;
+  cpf!: string;
+  email!: string;
   gender!: Gender;
-  name!: String;
-  start_date!: String;
-  team?: String;
+  name!: string;
+  start_date!: string;
+  team?: string;
 
   constructor() {
     this.clean();

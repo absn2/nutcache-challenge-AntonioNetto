@@ -6,6 +6,10 @@ export class CreateEmployeeService {
 
   public execute(newEmployee: Employee, employeeRepository: MockServer): Employee {
 
+    const formatCpf = /[.]|[-]/g
+
+    newEmployee.cpf = newEmployee.cpf.replace(formatCpf,"");
+
     const checkEmployeeExists = employeeRepository.findByCpf(newEmployee.cpf);
 
     if (checkEmployeeExists) {

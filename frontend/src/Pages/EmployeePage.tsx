@@ -90,8 +90,8 @@ const EmployeePage = () => {
             const newRows = [...rows];
 
             if(type === 1) newRows.splice(index,1);
-            else if (type === 2) newRows[index] = formData;
-            else newRows.push(formData);
+            else if (type === 2) newRows[index] = response;
+            else newRows.push(response);
 
             setRows(newRows);
           } else {

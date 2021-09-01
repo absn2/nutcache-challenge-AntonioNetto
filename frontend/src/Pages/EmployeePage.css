@@ -1,0 +1,33 @@
+
+
+.employee-container {
+  margin-top: 30px;
+  width: 90%;
+  margin-bottom: 25px;
+}
+
+.table-container {
+  border: 1px solid black;
+  border-radius: 3px;
+  margin-top: 10px;
+  max-height: 450px;
+  overflow: auto;
+}
+
+.form-input {
+  display: flex;
+  margin-bottom: 10px;
+  align-items: flex-end;
+}
+
+.input-field {
+  width: 40%;
+}
+
+.input-select-container {
+  width: 40%;
+}
+
+.input-select {
+  width: 100%;
+}
